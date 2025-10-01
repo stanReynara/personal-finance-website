@@ -1,7 +1,7 @@
 export async function GET(request: Request) {
   try {
     const res = await fetch(
-      `https://api.notion.com/v1/databases/${process.env.NOTION_DATABASE_ID_1}/query`,
+      `https://api.notion.com/v1/databases/${process.env.NOTION_DATABASE_ID_2}/query`,
       {
         method: "POST",
         headers: {
@@ -21,7 +21,11 @@ export async function GET(request: Request) {
     }
 
     const data = await res.json();
-    return Response.json(data);
+
+    const items = data.results;
+    console.log(items);
+
+    return Response.json(items);
   } catch (err: unknown) {
     return Response.json({ error: err as Error }, { status: 500 });
   }

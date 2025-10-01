@@ -105,28 +105,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-interface NotionTitle {
-  plain_text: string;
-}
-
-interface NotionProperty {
-  title?: NotionTitle[];
-  [key: string]: any;
-}
-
-interface NotionItem {
-  id: string;
-  properties: {
-    Name?: NotionProperty;
-    [key: string]: any;
-  };
-}
-
-interface NotionResponse {
-  results: NotionItem[];
-  [key: string]: any;
-}
+import { NotionResponse } from "@/types/notion";
 
 export default function Page() {
   const [data, setData] = useState<NotionResponse | null>(null);

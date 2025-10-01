@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans, Noto_Sans_Mono } from "next/font/google";
+// import { useContext } from "react";
 import "./globals.css";
 
 const geistSans = Noto_Sans({
