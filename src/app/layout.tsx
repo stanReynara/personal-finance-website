@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans, Noto_Sans_Mono } from "next/font/google";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/financeSidebar";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 const geistSans = Noto_Sans({
@@ -33,6 +34,7 @@ export default function RootLayout({
             <SidebarTrigger />
             {children}
           </main>
+          <Toaster />
         </SidebarProvider>
       </body>
     </html>
